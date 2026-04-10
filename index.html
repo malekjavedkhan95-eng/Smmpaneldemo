@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro SMM Panel - Best SMM Services</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-rocket"></i>
+                    <span>Pro SMM Panel</span>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#pricing" class="nav-link">Pricing</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="wallet-balance">
+                    <i class="fas fa-wallet"></i>
+                    <span id="balance">₹0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Best SMM Panel in India</h1>
+            <p>Instant & High Quality Services | 24/7 Support | Lowest Prices</p>
+            <div class="balance-display">
+                <h3>Your Balance: <span id="hero-balance">₹0</span></h3>
+                <button class="add-money-btn" onclick="openPaymentModal()">
+                    <i class="fas fa-plus"></i> Add Money
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid" id="servicesGrid">
+                <!-- Services will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form -->
+    <div class="order-modal" id="orderModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeOrderModal()">&times;</span>
+            <h3 id="serviceTitle">Service Name</h3>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label>Link (Profile/Post URL)</label>
+                    <input type="url" id="orderLink" required>
+                </div>
+                <div class="form-group">
+                    <label>Quantity</label>
+                    <input type="number" id="quantity" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label>Total Cost: <span id="totalCost">₹0</span></label>
+                </div>
+                <button type="submit" class="place-order-btn">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="payment-modal" id="paymentModal">
+        <div class="modal-content">
+            <span class="close" onclick="closePaymentModal()">&times;</span>
+            <h3>Add Money to Wallet</h3>
+            <div class="payment-qr" id="paymentQR">
+                <img src="" alt="Payment QR" id="qrImage">
+                <p>UPI: <span id="upiId">your-upi@paytm</span></p>
+                <p>Amount: ₹<span id="paymentAmount">100</span></p>
+            </div>
+            <div class="confirm-payment">
+                <input type="number" id="confirmAmount" placeholder="Enter amount you paid" required>
+                <button onclick="confirmPayment()">Confirm Payment</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Orders Section -->
+    <section id="orders" class="orders">
+        <div class="container">
+            <h2>My Orders</h2>
+            <div class="orders-list" id="ordersList">
+                <!-- Orders will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
